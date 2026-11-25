@@ -1,0 +1,22 @@
+﻿# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# downloaded installers
+*.msi
+*.zip
+*.dmg
+*.AppImage
+*.deb
+*.rpm
+*.tar.gz
+!skills/**/*.zip
+
+# local logs / probes
+*.log
+tmp/
+.craft-anything/
+
+# node
+node_modules/

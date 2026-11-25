@@ -1,0 +1,65 @@
+NOTICE — third-party components
+
+This repository distributes installer scripts plus unmodified skill
+instruction files from two upstream projects. It contains no upstream source
+code, binaries, fonts, icons, or brand assets.
+
+--------------------------------------------------------------------------------
+1. Craft Anything
+--------------------------------------------------------------------------------
+
+Upstream:   https://github.com/storytold/craft-anything
+Publisher:  ArtCraft Team and the Craft Anything contributors
+License:    MIT OR Apache-2.0 (dual)
+Copyright:  Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors
+
+Bundled here:
+  skills/craft-anything/SKILL.md
+  skills/craft-anything/references/recovery.md
+  (installed by `craft-anything-cli setup`, author-published skill text)
+
+Trademarks:
+  The "ArtCraft" name, wordmark, and logos are trademarks of the ArtCraft Team.
+  They are not covered by the code license and are NOT included in this
+  repository. See docs/brand/LICENSE-brand.txt upstream.
+
+Responsible use (upstream statement):
+  Use Craft Anything on software you own or are allowed to examine. It never
+  bypasses DRM, logins or anti-cheat. Rebuilds recreate layout, style and
+  behaviour from evidence; the agent is told not to copy logos, photos or text
+  unless you confirm you own them or have permission.
+
+--------------------------------------------------------------------------------
+2. REA — Reverse Engineer Anything
+--------------------------------------------------------------------------------
+
+Upstream:   https://github.com/morluto/rea
+npm:        rea-agents (pinned here at 6.5.0)
+License:    see the upstream repository LICENSE file
+
+Bundled here:
+  skills/reverse-engineer-anything/SKILL.md
+  skills/reverse-engineer-anything/references/*.md
+  (installed by `rea setup`, author-published skill text, skill version 42)
+
+REA is installed at run time via `npx -y rea-agents@6.5.0`; this repository does
+not vendor or re-license it.
+
+--------------------------------------------------------------------------------
+3. Scripts and documentation in this repository
+--------------------------------------------------------------------------------
+
+MIT, Copyright (c) 2026 craft-rea-skills contributors. See LICENSE.
+
+--------------------------------------------------------------------------------
+4. Runtime downloads
+--------------------------------------------------------------------------------
+
+Installers fetch release artifacts directly from the upstream GitHub releases:
+
+  craft-anything   https://github.com/storytold/craft-anything/releases
+  rea-agents       https://registry.npmjs.org/rea-agents
+
+Those artifacts are covered by their own licenses and are installed, not
+redistributed, by this repository. Verify checksums against SHA256SUMS.txt on
+the upstream release page when supply-chain integrity matters.
