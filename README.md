@@ -22,6 +22,9 @@ pwsh -File scripts/install.ps1            # 默认同时配置 claude_code + cod
 pwsh -File scripts/verify.ps1             # 验证注册与 MCP 握手
 ```
 
+> 没有 `pwsh`（PowerShell 7）时，用系统自带的 `powershell.exe`：
+> `powershell -ExecutionPolicy Bypass -File scripts\install.ps1`（`verify.ps1` 同理）。
+
 ### macOS / Linux
 
 ```bash
@@ -87,12 +90,27 @@ craft-anything-cli rebuild https://example.com "Recreate this website"
 npx -y rea-agents@6.5.0 doctor --client claude_code --json
 ```
 
-实测握手结果（本仓库验证基线）：
+实测基线（Windows 11 / Node 24.15 / 2026-11-25，`scripts/verify.ps1 -Client codex`）：
 
 ```
-craft-anything  name=craft-anything  version=0.6.1  protocol=2025-06-18  tools=30
-rea             name=rea             version=6.5.0  protocol=2025-06-18  tools=207
+== REA registration (codex)
+   skill: v42 tools=207 state=aligned
+   codex: aligned  (C:\Users\<you>\.codex\config.toml)
+
+== Craft Anything registration
+   registration:claude_code: ok
+   registration:codex: ok
+   mcp:self-test: ok
+   healthy: True
+
+== MCP handshake
+   craft-anything: ok  name=craft-anything version=0.6.1 tools=30
+   rea:            ok  name=rea            version=6.5.0 tools=207
+
+ALL CHECKS PASSED
 ```
+
+`registration:<client>: info` 表示该客户端存在但没让脚本配置它，不是错误。
 
 ---
 
